@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#0c1831"><meta name="description" content="Offline Elliott Wave research archive and scenario review. Independently built educational interface; not affiliated with Elliott Wave Monitor."><title>WaveScope · Elliott Wave Research Mirror</title><style>:root{--bg:#f3f6fa;--surface:#fff;--surface-alt:#f6f8fc;--text:#19253b;--muted:#6d798d;--line:#e0e6ef;--navy:#0b1730;--navy2:#111f3a;--accent:#087e87;--accent-light:#e3f6f2;--green:#168b6c;--gold:#d8a747;--shadow:0 14px 44px rgba(18,37,69,.055);--radius:18px;--max:1200px}
+html[data-theme=dark]{--bg:#0d1525;--surface:#14223a;--surface-alt:#1b2942;--text:#ebf3ff;--muted:#adbad0;--line:#2b3c57;--accent:#64d7d1;--accent-light:#204449;--green:#5de3b3;--shadow:0 18px 50px rgba(0,0,0,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #36c6cd;outline-offset:3px}.container{max-width:var(--max);padding-inline:24px;margin-inline:auto}.skip{position:absolute;left:-9999px;z-index:300;background:#fff;color:#000;padding:10px}.skip:focus{left:14px;top:10px}.topbar{background:var(--navy);color:#e8eef8;position:sticky;top:0;z-index:80;border-bottom:1px solid #24314d}.topbar-inner{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;color:white;font-size:23px;letter-spacing:-1.2px;font-weight:850;line-height:1.05}.brand:hover{color:white}.brand-accent{color:#6ce3bd}.brand small{display:block;font-weight:650;font-size:9px;letter-spacing:2px;color:#a7b5d0;margin-top:4px}.brand-glyph{display:grid;place-items:center;width:39px;height:39px;background:#1d3558;color:#f8c867;border:1px solid #355371;border-radius:12px}.brand-glyph svg{width:31px}.desktop-nav{display:flex;gap:27px;align-items:center}.desktop-nav a{font-size:13px;font-weight:700;color:#c4cde0;padding:30px 0;border-bottom:2px solid transparent}.desktop-nav a.active,.desktop-nav a:hover{color:#fff;border-color:#5de3b3}.top-actions{display:flex;align-items:center;gap:10px}.icon-btn,.saved-btn{background:#1b2a47;color:#f1f5ff;border:1px solid #32415b;border-radius:12px;min-height:38px;padding:7px 13px}.icon-btn{font-size:20px;min-width:39px}.saved-btn{font-size:12px;font-weight:700}.saved-btn b{margin-left:5px;color:#6de4bb}.mobile-only{display:none}.mobile-nav{background:var(--navy2);padding:12px 25px;border-top:1px solid #30415e}.mobile-nav:not([hidden]){display:grid;gap:8px}.mobile-nav a{padding:8px;color:#e6eaf4}.source-banner{background:#e7f5f0;border-bottom:1px solid #ccebe1;color:#20594d;font-size:12px}.source-banner .container{display:flex;align-items:center;gap:12px;min-height:40px;flex-wrap:wrap;padding-block:8px}.source-banner a{margin-left:auto;font-weight:800;color:#146f76}.live-dot{width:8px;height:8px;background:#21a67d;border-radius:50%;flex:none}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800;color:var(--accent)}.hero{background:radial-gradient(ellipse at 77% 25%,#1b3e63 0%,transparent 50%),linear-gradient(115deg,#08152e 10%,#101f3b 95%);color:#fff;overflow:hidden}.hero-inner{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:38px;min-height:430px;padding-block:52px}.hero h1{font-size:clamp(36px,4vw,57px);line-height:1.12;letter-spacing:-2px;margin:16px 0 20px;font-weight:850}.hero h1 em{font-style:normal;color:#73e4c4}.hero p{color:#b5c4da;max-width:540px;font-size:16px}.hero-actions{display:flex;gap:12px;margin-top:29px;flex-wrap:wrap}.btn{border-radius:12px;padding:12px 20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:750;border:1px solid transparent;min-height:43px}.btn.primary{background:#62dfb6;color:#081f2a}.btn.ghost{border-color:#5d708d;color:#e8effb;background:transparent}.btn.outline{border-color:var(--line);background:var(--surface);color:var(--text)}.btn:hover{filter:brightness(.96)}.wave-panel{position:relative;background:linear-gradient(140deg,#142d4e,#101d36);border:1px solid #315273;border-radius:22px;padding:18px;box-shadow:0 30px 70px #020c20aa}.wave-panel svg{width:100%;height:auto;display:block}.wave-head{display:flex;justify-content:space-between;color:#dce9f9;font-size:12px;font-weight:750}.wave-head span:last-child{color:#72e1b6}.wave-panel .wave-note{font-size:11px;color:#7e92ae;border-top:1px solid #2b4868;padding:10px 2px 0;margin-top:8px}.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:27px}.stat{padding:17px 18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)}.stat strong{display:block;font-size:26px;letter-spacing:-1px;color:var(--text)}.stat small{color:var(--muted);font-size:12px}.section{padding-block:34px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:0 0 19px}.section-heading h2{font-size:27px;letter-spacing:-1px;margin:4px 0 0}.section-heading p,.page-intro{color:var(--muted);margin:5px 0}.section-heading>a{color:var(--accent);font-weight:750;font-size:13px}.market-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.market-card{background:var(--surface);border:1px solid var(--line);padding:17px;border-radius:16px;min-height:132px;transition:transform .15s,border-color .15s}.market-card:hover{transform:translateY(-3px);border-color:var(--accent)}.market-icon{font-size:23px;color:var(--accent)}.market-card h3{font-size:15px;margin:8px 0 2px}.market-card p{font-size:12px;color:var(--muted);margin:0;line-height:1.45}.market-card span:last-child{font-size:12px;color:var(--accent);font-weight:800;display:block;margin-top:12px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:26px}.article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.article-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);min-width:0}.art-banner{height:160px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(130deg,#0e2b47,#15354b)}.art-banner.gold{background:linear-gradient(140deg,#182c48,#465038)}.art-banner.forex{background:linear-gradient(140deg,#102d45,#155c69)}.art-banner.crypto{background:linear-gradient(140deg,#182743,#383763)}.art-banner.indices{background:linear-gradient(140deg,#10294c,#284c6c)}.art-banner.commodities{background:linear-gradient(140deg,#173747,#365248)}.art-banner.macro{background:linear-gradient(140deg,#162e43,#2e5565)}.art-banner.education{background:linear-gradient(140deg,#172d51,#385585)}.art-banner svg{width:100%;height:100%;opacity:.9}.banner-symbol{position:absolute;left:16px;top:14px;color:#f2fafc;font-size:12px;font-weight:900;letter-spacing:1.4px}.banner-chip{position:absolute;right:15px;bottom:13px;color:#d7f9e8;background:#ffffff1c;border:1px solid #ffffff50;padding:3px 9px;border-radius:8px;font-size:11px}.article-body{padding:19px;display:flex;flex-direction:column;flex:1}.meta{font-size:11px;color:var(--muted);display:flex;gap:9px;align-items:center;flex-wrap:wrap}.category-label{color:var(--accent);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1.1px}.article-card h3{font-size:18px;line-height:1.38;letter-spacing:-.3px;margin:12px 0 8px}.article-card p{font-size:13px;color:var(--muted);margin:0 0 15px}.article-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto}.article-actions>a{font-size:13px;color:var(--accent);font-weight:800}.bookmark{background:var(--surface-alt);color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:5px 11px;font-size:16px}.bookmark[aria-pressed=true]{color:#c99523;background:#fff4d7;border-color:#f3d888}.sidebar{display:grid;align-content:start;gap:17px}.sidebar-box,.info-card,.toolbar,.detail-main,.lab-card{border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}.sidebar-box h3{font-size:15px;margin:0 0 13px}.sidebar-links{display:grid;gap:2px}.sidebar-links a{padding:9px 3px;border-bottom:1px solid var(--line);font-size:13px;display:flex;align-items:center;justify-content:space-between}.sidebar-links a:last-child{border:0}.sidebar-links span{color:var(--muted)}.latest-link{border-bottom:1px solid var(--line);padding:11px 0;display:block}.latest-link:last-child{border:0;padding-bottom:0}.latest-link strong{display:block;font-size:12px;line-height:1.42}.latest-link small{color:var(--muted);font-size:10px}.callout{border-left:3px solid var(--accent);background:var(--accent-light);padding:13px;border-radius:0 9px 9px 0;font-size:12px}.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:22px}.search{flex:1;min-width:190px;background:var(--surface-alt);border:1px solid var(--line);border-radius:11px;padding:11px 13px;color:var(--text)}.select{background:var(--surface-alt);border:1px solid var(--line);border-radius:11px;padding:11px;color:var(--text)}.page-head{padding:37px 0 24px}.page-head h1{font-size:clamp(29px,4vw,43px);letter-spacing:-1.5px;line-height:1.15;margin:9px 0}.page-head p{max-width:690px;color:var(--muted)}.tag-row{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0 22px}.tag{background:var(--surface);border:1px solid var(--line);color:var(--muted);padding:7px 12px;border-radius:30px;font-size:12px;font-weight:750}.tag.active{background:var(--navy);color:#fff;border-color:var(--navy)}.tag:hover{border-color:var(--accent)}.pagination{display:flex;justify-content:center;gap:9px;margin:28px 0}.page-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:9px;min-width:40px;padding:7px 10px}.page-btn.active{color:white;background:var(--accent);border-color:var(--accent)}.page-btn:disabled{opacity:.35;cursor:not-allowed}.detail-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:26px;margin:20px auto 46px}.detail-main{padding:32px}.detail-main h1{font-size:clamp(27px,3.3vw,40px);line-height:1.24;letter-spacing:-1.1px;margin:11px 0 16px}.detail-summary{color:var(--muted);font-size:16px}.detail-section{border-top:1px solid var(--line);padding-top:19px;margin-top:20px}.detail-section h2{font-size:18px;margin:0 0 8px}.fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.fact{border:1px solid var(--line);background:var(--surface-alt);border-radius:12px;padding:13px}.fact small{display:block;color:var(--muted);font-size:11px}.fact strong{display:block;font-size:14px;margin-top:4px;overflow-wrap:anywhere}.provenance{font-size:13px;color:var(--muted)}.provenance a{color:var(--accent);overflow-wrap:anywhere}.empty{text-align:center;padding:50px 20px;border:1px dashed var(--line);border-radius:18px;background:var(--surface)}.empty span{font-size:35px}.empty p{color:var(--muted)}.lab-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:20px}.lab-card h2{font-size:20px;margin:0 0 11px}.lab-card p{color:var(--muted);font-size:13px}.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:12px;color:var(--muted);font-weight:750;margin-bottom:5px}.field input,.field select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;background:var(--surface-alt);color:var(--text)}.fib-results{display:grid;gap:7px;margin-top:16px}.fib-result{display:flex;justify-content:space-between;padding:9px 12px;background:var(--surface-alt);border-radius:9px;font-size:13px}.fib-result strong{font-variant-numeric:tabular-nums}.wave-rules{display:grid;gap:10px}.wave-rule{padding:12px;background:var(--surface-alt);border:1px solid var(--line);border-radius:10px}.wave-rule strong{display:block;font-size:13px}.wave-rule small{color:var(--muted)}.method-block{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info-card h3{font-size:16px;margin:9px 0 7px}.info-card p{font-size:13px;color:var(--muted)}.info-card .number{font-size:27px;color:var(--accent);font-weight:850}.footer{background:#0a172f;color:#aab9d3;margin-top:35px;padding-top:42px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;padding-bottom:34px}.footer-brand{color:#fff;font-size:20px;font-weight:900;letter-spacing:-1px}.footer-brand span{color:#70e5c1}.footer p{font-size:12px;max-width:380px}.footer h3{color:#fff;font-size:13px}.footer a{display:block;font-size:12px;padding:3px 0}.legal{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #2c3b56;padding-block:18px;font-size:11px}.notice{background:var(--accent-light);border:1px solid #91cfc3;border-radius:12px;padding:12px 15px;color:var(--text);font-size:12px}.mini-graphic{width:100%;max-height:300px}.badge-stage{display:inline-flex;background:var(--accent-light);color:var(--accent);font-size:11px;padding:5px 10px;border-radius:15px;font-weight:800}.breadcrumb{font-size:12px;color:var(--muted);margin-bottom:15px}.breadcrumb a{color:var(--accent)}@media(max-width:1100px){.desktop-nav{gap:15px}.desktop-nav a{font-size:12px}.layout,.detail-layout{grid-template-columns:minmax(0,1fr) 275px}.market-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.container{padding-inline:17px}.topbar-inner{min-height:65px}.desktop-nav{display:none}.mobile-only{display:inline-block}.saved-btn span{display:none}.hero-inner{grid-template-columns:1fr;padding-block:39px}.hero h1{font-size:36px}.hero-inner>.wave-panel{max-width:600px}.stat-strip{grid-template-columns:repeat(2,1fr)}.layout,.detail-layout,.lab-grid{grid-template-columns:1fr}.article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid{grid-template-columns:1fr 1fr;gap:22px}.footer-grid>div:first-child{grid-column:span 2}.method-block{grid-template-columns:1fr}.source-banner .container span:nth-child(3){flex-basis:70%}.source-banner a{margin-left:0}.detail-main{padding:20px}}@media(max-width:520px){.brand{font-size:19px}.brand small{font-size:7px;letter-spacing:1.5px}.brand-glyph{height:34px;width:34px}.top-actions{gap:5px}.icon-btn,.saved-btn{padding:5px 8px}.market-grid,.article-grid,.sidebar{grid-template-columns:1fr}.stat{padding:14px}.stat strong{font-size:22px}.hero h1{font-size:32px}.page-head{padding-top:25px}.toolbar{display:grid;grid-template-columns:1fr}.search{min-width:0}.fact-grid,.calc-row{grid-template-columns:1fr}.legal{flex-direction:column}.source-banner .container span:nth-child(3){flex-basis:100%}}
+/* CREA Research Studio additions: responsive, keyboard accessible, source-only rendering. */
+.sr-only{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lang-label select{background:var(--surface-alt);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px;font-size:12px;max-width:65px}
+.research-layout{display:grid;gap:20px;padding-bottom:50px}
+.research-card{background:var(--surface);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:24px;min-width:0}
+.research-card h2{font-size:21px;letter-spacing:-.3px;margin:0 0 10px}
+.research-card h3{font-size:17px;margin:14px 0}
+.research-card p,.research-card li,.research-card .minor{font-size:13px;color:var(--muted);line-height:1.6}
+.research-form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end;margin:18px 0}
+.research-form label,.pivot-grid label,.snapshot-grid label{font-size:12px;font-weight:750;color:var(--text);display:grid;gap:7px}
+.research-form input,.research-form select,.pivot-grid input,.action-row select,.snapshot-grid textarea{width:100%;min-width:0;padding:10px;background:var(--surface-alt);border:1px solid var(--line);color:var(--text);border-radius:10px;line-height:1.5}
+.research-form .check-label{display:flex;align-items:center;gap:8px;grid-column:1/-1}.research-form .check-label input{width:20px;height:20px}
+.tf-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px;margin-top:15px}
+.tf-card{background:var(--surface-alt);border:1px solid var(--line);color:var(--text);border-radius:12px;display:grid;gap:5px;padding:11px 6px;min-width:0;position:relative;text-align:center}
+.tf-card strong{font-size:13px}.tf-card small{font-size:10px;color:var(--muted);white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.tf-card span{position:absolute;top:6px;right:7px;color:#48ae90;font-size:11px}
+.tf-card.selected,.tf-card:hover{border-color:var(--accent);background:var(--accent-light)}
+.chart-wrapper{overflow:auto;background:#0b1b33;border-radius:13px}.candle-chart{display:block;width:100%;min-width:600px;max-height:395px}
+.facts-stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.facts-stack>div{background:var(--surface-alt);border-radius:10px;padding:12px;border:1px solid var(--line)}.facts-stack small{display:block;color:var(--muted);font-size:11px}.facts-stack strong{font-size:13px;overflow-wrap:anywhere}
+.pivot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}.action-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.studio-btn{background:var(--accent);color:#fff;border:1px solid var(--accent);padding:10px 15px;border-radius:10px;font-weight:750;cursor:pointer}.studio-btn.secondary{background:var(--surface-alt);color:var(--text);border:1px solid var(--line)}
+#wave-preview svg{width:100%;max-height:280px;margin-top:15px}.snapshot-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:17px}.snapshot-grid textarea{resize:vertical;font:12px/1.5 ui-monospace,monospace}
+.journal-list p{padding:8px 10px;background:var(--surface-alt);border-radius:8px;margin:5px 0}
+:focus-visible{outline:3px solid #1eae8c!important;outline-offset:3px}
+@media(max-width:1000px){.research-form{grid-template-columns:repeat(2,1fr)}.tf-grid{grid-template-columns:repeat(5,1fr)}.desktop-nav{gap:10px}.desktop-nav a{font-size:11px}}
+@media(max-width:760px){.tf-grid{grid-template-columns:repeat(4,1fr)}.research-card{padding:17px}.facts-stack{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.research-form,.snapshot-grid,.facts-stack{grid-template-columns:1fr}.pivot-grid{grid-template-columns:repeat(2,1fr)}.tf-grid{grid-template-columns:repeat(3,1fr)}.lang-label select{max-width:55px}.research-card{padding:15px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+[dir="rtl"] .source-banner .container,[dir="rtl"] .topbar-inner{direction:rtl}
+[dir="rtl"] .wave-panel,[dir="rtl"] .candle-chart,[dir="rtl"] .art-banner{direction:ltr}
+</style><script>const __data = (()=>{
+
+// Independently authored research index. Headlines and links identify public source articles.
+// These entries are dated snapshots, NOT live feeds, verified market quotes, or trading signals.
+const SOURCE_ROOT = 'https://elliottwavemonitor.com/en/';
+const categories = [
+  {id:'all',label:'All coverage',icon:'✦',description:'All indexed market and education reports'},
+  {id:'gold',label:'Gold',icon:'◈',description:'XAUUSD • wave structure and scenario changes'},
+  {id:'forex',label:'Forex',icon:'⇄',description:'Major currency-pair Elliott Wave analysis'},
+  {id:'indices',label:'Indices',icon:'▤',description:'Nasdaq, Dow Jones and S&P 500'},
+  {id:'crypto',label:'Crypto',icon:'⬡',description:'Digital-asset wave structures'},
+  {id:'commodities',label:'Commodities',icon:'◉',description:'Silver and crude oil'},
+  {id:'macro',label:'Macro news',icon:'◎',description:'Economic developments and market context'},
+  {id:'education',label:'Education',icon:'◇',description:'Elliott Wave concepts and validity rules'}
+];
+
+const articles = [
+ {id:'gold-ny-1111',title:'Gold Elliott Wave Analysis — New York Session | November 11, 2026',date:'2026-11-11',category:'gold',symbol:'XAUUSD',timeframe:'H1',read:2,
+  summary:'A lower swing prompted the analyst to revise the preceding fourth-wave interpretation. A corrective rebound followed by another decline remains a conditional path.',
+  structure:'Purple wave (a) provisionally identified; purple (b) recovery and (c) decline still projected.',fibonacci:'50% retracement',reference:'4,148.66 (upside reference)',invalidation:null,
+  url:'https://elliottwavemonitor.com/en/gold-elliott-wave-analysis-new-york-session-november-11-2026/'},
+ {id:'gold-london-1111',title:'Gold Forecast — London Session | November 11, 2026',date:'2026-11-11',category:'gold',symbol:'XAUUSD',timeframe:'H1',read:2,
+  summary:'An earlier London-session count treated the corrective A–B–C as potentially complete. The later New York update challenges this thesis.',
+  structure:'Green wave (iv) provisionally placed at a low in this earlier snapshot.',fibonacci:null,reference:'4,148.66 (upside reference)',invalidation:null,
+  url:'https://elliottwavemonitor.com/en/gold-forecast-london-session-november-11-2026/'},
+ {id:'silver-1111',title:'Silver Technical Analysis: XAGUSD Pullback Deepens as Wave ii Remains Open',date:'2026-11-11',category:'commodities',symbol:'XAGUSD',timeframe:'H4',read:1,
+  summary:'A deeper correction leaves the proposed second wave unresolved; the analysis distinguishes a possible turning area from an observed turn.',
+  structure:'Blue wave i provisionally complete; wave ii still developing.',fibonacci:'50% retracement',reference:'53.754 (upside reference)',invalidation:'48.589',
+  url:'https://elliottwavemonitor.com/en/silver-technical-analysis-xagusd-pullback-deepens-as-wave-ii-remains-open-november-11-2026/'},
+ {id:'oil-1111',title:'Crude Oil Analysis: USOilSpot Rebounds as Wave (4) Tests Bearish Outlook',date:'2026-11-11',category:'commodities',symbol:'USOilSpot',timeframe:'H4',read:1,
+  summary:'The rebound is interpreted as a possible corrective fourth wave within a bearish count; a renewed decline was not yet confirmed.',
+  structure:'Green wave (4) provisionally complete; next downside leg projected.',fibonacci:null,reference:'83.054 (downside reference)',invalidation:'97.890',
+  url:'https://elliottwavemonitor.com/en/crude-oil-analysis-usoilspot-rebounds-as-wave-4-tests-bearish-outlook-november-11-2026/'},
+ {id:'indices-1110',title:'US Index Elliott Wave Outlook: Rebounds Fade as Bearish Paths Emerge',date:'2026-11-10',category:'indices',symbol:'NAS100 / US30 / SPX500',timeframe:'H4',read:3,
+  summary:'The three US-index structures were reassessed after corrective rallies; each carries a distinct downside scenario and invalidation boundary.',
+  structure:'Nasdaq downside continuation projected; the Dow and S&P paths allow interim rebounds.',fibonacci:'61.8% referenced for Dow and S&P',reference:'NAS100 26,275.87; US30 50,799; SPX500 7,300.35',invalidation:'NAS100 30,042.46; US30 53,805; SPX500 7,721.33',
+  url:'https://elliottwavemonitor.com/en/us-index-elliott-wave-outlook-rebounds-fade-as-bearish-paths-emerge-november-10-2026/'},
+ {id:'gold-1110',title:'Gold Elliott Wave Outlook: Wave 4 Pullbacks in Focus on H4 and H1',date:'2026-11-10',category:'gold',symbol:'XAUUSD',timeframe:'H4 + H1',read:3,
+  summary:'The four-hour and hourly views proposed related but different-degree corrections; their wave-count invalidations must not be mixed.',
+  structure:'H4 red 4 and H1 green (iv) both projected, not already confirmed.',fibonacci:'38.2% retracement (separate degrees)',reference:'4,148.66 (upside reference)',invalidation:'3,870.18 (H4 only; H1 not specified)',
+  url:'https://elliottwavemonitor.com/en/gold-elliott-wave-outlook-wave-4-pullbacks-in-focus-on-h4-and-h1-november-10-2026/'},
+ {id:'cpi-1110',title:'US CPI Rises 0.4% Monthly, Beating Forecast Despite Slower Inflation',date:'2026-11-10',category:'macro',symbol:'USD',timeframe:'Macro',read:1,
+  summary:'The reported monthly inflation reading exceeded consensus, while its pace moderated compared with the previous reading. Potential FX effects remained conditional.',
+  structure:'Economic-data interpretation; no Elliott Wave count.',fibonacci:null,reference:'Actual 0.4%; forecast 0.3%; previous 0.6%',invalidation:null,
+  url:'https://elliottwavemonitor.com/en/us-cpi-rises-04-monthly-beating-forecast-despite-slower-inflation/'},
+ {id:'gbp-1110',title:'GBPUSD Price Analysis: Deeper Fibonacci Pullback Tests Recovery',date:'2026-11-10',category:'forex',symbol:'GBPUSD',timeframe:'H4',read:2,
+  summary:'Sterling retraced more deeply than the earlier reference while the proposed recovery remained unconfirmed and bounded by a revised threshold.',
+  structure:'Blue (W)–(X) structure retained.',fibonacci:'61.8% retracement',reference:'1.35032 (upside reference)',invalidation:'1.33424',
+  url:'https://elliottwavemonitor.com/en/gbpusd-price-analysis-deeper-fibonacci-pullback-tests-recovery-november-10-2026/'},
+ {id:'eur-1110',title:'EURUSD Price Outlook: Deeper Wave 2 Pullback Takes Shape',date:'2026-11-10',category:'forex',symbol:'EURUSD',timeframe:'H4',read:2,
+  summary:'The analyst moved the red-wave-2 retracement reference deeper while retaining a conditional upside continuation scenario.',
+  structure:'Red wave 1 labeled; red wave 2 projected.',fibonacci:'61.8% retracement',reference:'1.12731 (upside reference)',invalidation:'1.11045',
+  url:'https://elliottwavemonitor.com/en/eurusd-price-outlook-deeper-wave-2-pullback-takes-shape-november-10-2026/'},
+ {id:'btc-1109',title:'Bitcoin Elliott Wave Analysis — New York Session | November 9, 2026',date:'2026-11-09',category:'crypto',symbol:'BTCUSD',timeframe:'H1',read:2,
+  summary:'A broken earlier threshold forced a revised Bitcoin count. The new path anticipated a corrective bounce before further potential weakness.',
+  structure:'Blue i observed in the source count; blue ii and red C projected.',fibonacci:'50% retracement (approximate region)',reference:'About 78,000 (projected corrective area)',invalidation:'73,444.3 (source-chart figure)',
+  url:'https://elliottwavemonitor.com/en/bitcoin-elliott-wave-analysis-new-york-session-november-9-2026/'},
+ {id:'indices-1109',title:'US Index Elliott Wave Outlook: Rebounds Take Shape After Steep Declines',date:'2026-11-09',category:'indices',symbol:'NAS100 / US30 / SPX500',timeframe:'H4',read:3,
+  summary:'An earlier index snapshot anticipated rebound phases before possible renewed weakness. Later reports superseded some levels.',
+  structure:'Corrective rallies treated as projections at time of publication.',fibonacci:'50%–61.8% reference region',reference:'See original multi-index table',invalidation:'Historical levels; check Nov 10 updates',
+  url:'https://elliottwavemonitor.com/en/us-index-elliott-wave-outlook-rebounds-take-shape-after-steep-declines-november-9-2026/'},
+ {id:'btc-1102',title:'Bitcoin Price Forecast: Corrective Recovery Targets $80,000',date:'2026-11-02',category:'crypto',symbol:'BTCUSD',timeframe:'H1',read:2,
+  summary:'An earlier Bitcoin count examined an upward corrective phase; it was not a confirmation that a larger trend had reversed.',
+  structure:'Blue a–b–c corrective rise anticipated.',fibonacci:null,reference:'80,000 (historical scenario)',invalidation:null,
+  url:'https://elliottwavemonitor.com/en/bitcoin-price-forecast-corrective-recovery-targets-80000-november-2-2026/'},
+ {id:'edu-invalid',title:'When Does an Elliott Wave Count Become Invalid?',date:'2026-10-22',category:'education',symbol:'Method',timeframe:'Tutorial',read:4,
+  summary:'Explains how hard structural rules differ from approximate Fibonacci levels, using test examples for impulse-wave counts.',
+  structure:'Wave 2 origin rule; wave 4 overlap rule for standard impulses; wave 3 length comparison.',fibonacci:'Fibonacci targets are estimates, not hard invalidations.',reference:null,invalidation:'Depends on wave pattern and degree',
+  url:'https://elliottwavemonitor.com/en/when-does-an-elliott-wave-count-become-invalid/'},
+ {id:'edu-theory',title:'Elliott Wave Theory: Everything You Need To Know',date:'2023-09-20',category:'education',symbol:'Method',timeframe:'Tutorial',read:33,
+  summary:'A broad introduction to five-wave motive sequences and three-wave corrections, the hierarchy of degrees, and common wave patterns.',
+  structure:'Conceptual guide only.',fibonacci:null,reference:null,invalidation:null,
+  url:'https://elliottwavemonitor.com/en/elliott-wave-theory/'}
+];
+
+const originalCategoryLinks = {
+ gold:'https://elliottwavemonitor.com/en/gold-forecast/',
+ forex:'https://elliottwavemonitor.com/en/eurusd-forecast/',
+ indices:'https://elliottwavemonitor.com/en/',
+ crypto:'https://elliottwavemonitor.com/en/',
+ commodities:'https://elliottwavemonitor.com/en/silver-forecast/',
+ macro:'https://elliottwavemonitor.com/en/latest-news-and-analysis/',
+ education:'https://elliottwavemonitor.com/en/elliott-wave-theory/'
+};
+
+return {articles,categories,originalCategoryLinks,SOURCE_ROOT};
+})();
+const __logic = (()=>{
+
+const RATIOS = Object.freeze([0.236, 0.382, 0.5, 0.618, 0.786]);
+function retracementLevels(low, high, direction='bullish') {
+  if (!Number.isFinite(low) || !Number.isFinite(high) || high <= low) throw new RangeError('High must be greater than low; both must be finite');
+  if (!['bullish','bearish'].includes(direction)) throw new RangeError('Invalid direction');
+  const span=high-low;
+  return RATIOS.map(ratio=>({ratio, level:direction==='bullish'?high-span*ratio:low+span*ratio}));
+}
+function escapeHTML(v) {
+  return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function safeSourceLink(value) {
+  try { const url=new URL(value); return url.protocol==='https:' && url.hostname==='elliottwavemonitor.com' && url.pathname.startsWith('/en/') ? url.toString() : null; }
+  catch { return null; }
+}
+function filterArticles(articles,{category='all',query='',sort='newest',saved=null}={}) {
+  let items=articles.filter(article=>(category==='all'||article.category===category) && (saved===null||saved.has(article.id)));
+  const needle=String(query).trim().toLocaleLowerCase('en');
+  if(needle) items=items.filter(article=>[article.title,article.symbol,article.summary,article.category,article.timeframe,article.structure].some(x=>String(x??'').toLocaleLowerCase('en').includes(needle)));
+  items=items.slice().sort((a,b)=>sort==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));
+  return items;
+}
+function parseRoute(hash){
+ const path=String(hash||'').replace(/^#\/?/,'').split('?')[0].replace(/^\/+|\/+$/g,'');
+ const fragments=path.split('/');
+ if(['','home'].includes(path))return {page:'home'};
+ if(['news','education','lab','studio','saved','sources'].includes(path))return {page:path};
+ if(fragments[0]==='category' && /^[a-z-]+$/.test(fragments[1]||'') && fragments.length===2)return {page:'category',id:fragments[1]};
+ if(fragments[0]==='article' && /^[a-z0-9-]+$/.test(fragments[1]||'') && fragments.length===2)return {page:'article',id:fragments[1]};
+ return {page:'not-found'};
+}
+
+return {RATIOS,retracementLevels,escapeHTML,safeSourceLink,filterArticles,parseRoute};
+})();
+const __engine = (()=>{
+
+/** Pure, offline research arithmetic. No broker I/O, order APIs or hidden data sources. */
+const TF_MINUTES = Object.freeze({M1:1,M2:2,M3:3,M4:4,M5:5,M6:6,M10:10,M12:12,M15:15,M20:20,M30:30,H1:60,H2:120,H3:180,H4:240,H6:360,H8:480,H12:720,D1:1440,W1:10080,MN1:null});
+const TIMEFRAMES = Object.freeze(Object.keys(TF_MINUTES));
+const MAX_CSV_BYTES=4*1024*1024, MAX_BARS=20000;
+const finite = n => Number.isFinite(n);
+const fail = msg => { throw new Error(msg); };
+const required = ['open','high','low','close'];
+function tokenizeCSV(line) {
+  const result=[];let buf='',quotes=false;
+  for(let i=0;i<line.length;i++){
+    const ch=line[i];
+    if(ch==='"') { if(quotes && line[i+1]==='"'){buf+='"';i++;} else if(!quotes && buf.trim())fail('Malformed CSV quoting'); else quotes=!quotes; }
+    else if((ch===','||ch==='\t'||ch===';')&&!quotes){result.push(buf.trim());buf='';}
+    else buf+=ch;
+  }
+  if(quotes) fail('Unterminated CSV quote');result.push(buf.trim());return result;
+}
+function headerId(v){return v.replace(/^\uFEFF/,'').toLowerCase().replace(/[<>_\s\-]/g,'');}
+function parseTimestamp(value, offsetMinutes=0){
+  if(!Number.isInteger(offsetMinutes) || Math.abs(offsetMinutes)>840)fail('Invalid broker UTC offset');
+  const s=String(value||'').trim();
+  const m=s.match(/^(\d{4})[.\/-](\d\d)[.\/-](\d\d)[ T](\d\d):(\d\d)(?::(\d\d))?$/);
+  if(!m)fail(`Unsupported timestamp: ${s.slice(0,40)}`);
+  const [y,mo,d,h,mi,sec]=m.slice(1).map(Number);
+  const t=Date.UTC(y,mo-1,d,h,mi,sec||0);
+  const date=new Date(t);
+  if(date.getUTCFullYear()!==y||date.getUTCMonth()!==mo-1||date.getUTCDate()!==d||date.getUTCHours()!==h||date.getUTCMinutes()!==mi||date.getUTCSeconds()!==(sec||0))fail('Nonexistent date/time');
+  return t-offsetMinutes*60000;
+}
+/** Expects chronological broker OHLC CSV (MetaTrader or standard CSV). Last row is excluded unless alreadyClosed=true. */
+function parseOHLC(text,{brokerOffsetMinutes=0,alreadyClosed=false,maxBars=MAX_BARS}={}){
+  if(typeof text!=='string')fail('CSV must be text');
+  if(new TextEncoder().encode(text).length>MAX_CSV_BYTES)fail('CSV exceeds 4 MiB bound');
+  if(!Number.isSafeInteger(maxBars)||maxBars<1||maxBars>MAX_BARS)fail('Invalid bar count bound');
+  const lines=text.replace(/^\uFEFF/,'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+  if(lines.length<2)fail('Missing OHLC records');
+  if(lines.length>maxBars+2)fail('Too many OHLC records');
+  const headers=tokenizeCSV(lines[0]).map(headerId);
+  const idx=k=>headers.indexOf(k);
+  const dateIdx=idx('date'),timeIdx=idx('time'),datetimeIdx=['datetime','timestamp'].map(idx).find(i=>i>=0);
+  if(datetimeIdx===undefined && (dateIdx<0||timeIdx<0))fail('Date and time columns required');
+  for(const k of required)if(idx(k)<0)fail(`Missing ${k} column`);
+  const volumeIdx=['tickvol','tickvolume','volume','vol'].map(idx).find(i=>i>=0);
+  let last=-Infinity;
+  const out=[];
+  for(let j=1;j<lines.length;j++){
+    const parts=tokenizeCSV(lines[j]);
+    if(parts.length!==headers.length)fail(`CSV column mismatch at row ${j+1}`);
+    const stamp=datetimeIdx!==undefined?parts[datetimeIdx]:`${parts[dateIdx]} ${parts[timeIdx]}`;
+    const time=parseTimestamp(stamp,brokerOffsetMinutes);
+    if(time<=last)fail(`Nonascending or duplicate timestamps at row ${j+1}`);last=time;
+    const b={time};
+    for(const k of required){const v=parts[idx(k)];if(v==='')fail(`Blank ${k} at row ${j+1}`);b[k]=Number(v);if(!finite(b[k]))fail(`Nonfinite ${k} at row ${j+1}`);}
+    if(b.high < Math.max(b.open,b.close,b.low)||b.low > Math.min(b.open,b.close,b.high))fail(`Inconsistent OHLC at row ${j+1}`);
+    if(volumeIdx!==undefined){b.volume=Number(parts[volumeIdx]);if(!finite(b.volume)||b.volume<0)fail(`Invalid volume at row ${j+1}`);}
+    out.push(b);
+  }
+  if(!alreadyClosed)out.pop();
+  if(out.length>maxBars)fail('Too many completed candles');
+  if(!out.length)fail('No completed candles after excluding last row');
+  return out;
+}
+function validateBars(bars){
+  if(!Array.isArray(bars)||bars.length<1||bars.length>MAX_BARS)fail('Invalid OHLC array size');
+  let prev=-Infinity;
+  for(const b of bars){if(!finite(b.time)||b.time<=prev||required.some(k=>!finite(b[k]))||b.high<Math.max(b.open,b.close,b.low)||b.low>Math.min(b.open,b.close,b.high))fail('Invalid or unsorted OHLC candles');prev=b.time;}
+  return true;
+}
+function bucketTime(time,tf){
+  const minutes=TF_MINUTES[tf];
+  if(tf==='MN1'){const d=new Date(time);return Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),1);}
+  if(tf==='W1'){const d=new Date(time),day=(d.getUTCDay()+6)%7;return Math.floor((time-day*86400000)/86400000)*86400000;}
+  return Math.floor(time/(minutes*60000))*(minutes*60000);
+}
+/** Conservative resampler: only complete, uninterrupted M1 buckets are aggregated.
+ * Direct broker-exported W1/MN1 candles are preferable because market sessions have gaps. */
+function resampleM1(bars,tf){
+  validateBars(bars);if(!(tf in TF_MINUTES))fail('Unsupported timeframe');if(tf==='M1')return bars.slice();
+  if(tf==='W1'||tf==='MN1')fail('W1 and MN1 require native broker exports; session calendar unavailable');
+  const m=TF_MINUTES[tf];const groups=new Map();
+  for(const b of bars){const stamp=bucketTime(b.time,tf);if(!groups.has(stamp))groups.set(stamp,[]);groups.get(stamp).push(b);}
+  const out=[];
+  for(const [stamp,group] of groups){
+    if(group.length!==m||group[0].time!==stamp||group.at(-1).time!==stamp+(m-1)*60000)continue;
+    if(group.some((b,i)=>i&&b.time!==group[i-1].time+60000))continue;
+    out.push({time:stamp,open:group[0].open,high:Math.max(...group.map(b=>b.high)),low:Math.min(...group.map(b=>b.low)),close:group.at(-1).close,volume:group.reduce((v,b)=>v+(b.volume||0),0)});
+  }
+  return out;
+}
+function sma(data,period){
+ if(!Number.isInteger(period)||period<1)fail('Invalid SMA period');return data.map((_,i)=>i<period-1?null:data.slice(i-period+1,i+1).reduce((s,n)=>s+n,0)/period);
+}
+function ema(data,period){
+ if(!Number.isInteger(period)||period<1)fail('Invalid EMA period');const result=Array(data.length).fill(null);if(data.length<period)return result;
+ let prior=data.slice(0,period).reduce((s,n)=>s+n,0)/period;result[period-1]=prior;const k=2/(period+1);
+ for(let i=period;i<data.length;i++){prior=data[i]*k+prior*(1-k);result[i]=prior;}return result;
+}
+function lwma(data,period){
+ if(!Number.isInteger(period)||period<1)fail('Invalid LWMA period');const denom=period*(period+1)/2;
+ return data.map((_,i)=>i<period-1?null:data.slice(i-period+1,i+1).reduce((s,n,j)=>s+n*(j+1),0)/denom);
+}
+function bollinger(data,period=20,stdev=2){
+ if(!Number.isInteger(period)||period<2||!finite(stdev)||stdev<=0)fail('Invalid Bollinger configuration');const mid=sma(data,period);
+ return data.map((_,i)=>{if(mid[i]===null)return null;const samples=data.slice(i-period+1,i+1),variance=samples.reduce((s,v)=>s+(v-mid[i])**2,0)/period,sd=Math.sqrt(variance);return {mid:mid[i],upper:mid[i]+stdev*sd,lower:mid[i]-stdev*sd};});
+}
+/** Closed-bar, deterministic BBMA descriptive snapshot. No entry signals. */
+function bbmaSnapshot(bars){
+ validateBars(bars);if(bars.length<50)return {status:'insufficient-warmup',needed:50,available:bars.length};
+ const close=bars.map(b=>b.close),hi=bars.map(b=>b.high),lo=bars.map(b=>b.low),last=bars.at(-1),i=bars.length-1;
+ const e50=ema(close,50)[i],bb=bollinger(close)[i];
+ const ma5hi=lwma(hi,5)[i],ma10hi=lwma(hi,10)[i],ma5lo=lwma(lo,5)[i],ma10lo=lwma(lo,10)[i];
+ return {status:'ready',time:last.time,close:last.close,ema50:e50,bb,ma5hi,ma10hi,ma5lo,ma10lo,position:last.close>bb.upper?'above-upper-band':last.close<bb.lower?'below-lower-band':last.close>=bb.mid?'upper-half':'lower-half',bias:last.close>e50?'above-ema50':last.close<e50?'below-ema50':'at-ema50'};
+}
+/** User-specified six pivot points: origin,1,2,3,4,5 (not an automated Elliott count). */
+function validateImpulse(points,direction='bullish'){
+ if(!Array.isArray(points)||points.length!==6||points.some(p=>!finite(p)))fail('Six finite pivot prices required');
+ if(!['bullish','bearish'].includes(direction))fail('Invalid direction');
+ const p=points.map(x=>direction==='bearish'?-x:x);
+ const lengths=[p[1]-p[0],p[3]-p[2],p[5]-p[4]];
+ const checks={wave1Positive:lengths[0]>0,wave2AboveOrigin:p[2]>p[0]&&p[2]<p[1],wave3Progress:p[3]>p[1]&&lengths[1]>0,wave4NoOverlap:p[4]>p[1]&&p[4]<p[3],wave5Progress:p[5]>p[3]&&lengths[2]>0,wave3NotShortest:lengths[1]>=Math.min(lengths[0],lengths[2])};
+ return {checks,valid:Object.values(checks).every(Boolean),lengths,direction,note:'Standard impulse heuristic; diagonal and alternative structures require distinct rules.'};
+}
+function fibonacciExtensions(origin,end,correction,ratios=[1,1.272,1.618,2,2.618]){
+ for(const n of [origin,end,correction])if(!finite(n))fail('Finite pivots required');if(origin===end)fail('Nonzero impulse required');
+ if(!Array.isArray(ratios)||ratios.length>12||ratios.some(n=>!finite(n)||n<=0||n>20))fail('Invalid extension ratios');
+ return ratios.map(r=>({ratio:r,level:correction+(end-origin)*r}));
+}
+/** Replay uses candles after the cutoff ONLY for evaluation, never for deriving inputs.
+ * Equality at boundary counts as touched, simultaneous high/low is ambiguous. */
+function evaluateScenario(bars,{cutoffIndex,horizon=24,direction,target,invalidation}){
+ validateBars(bars);
+ if(!Number.isInteger(cutoffIndex)||cutoffIndex<0||cutoffIndex>=bars.length)fail('Invalid cutoff index');
+ if(!Number.isInteger(horizon)||horizon<1||horizon>1000)fail('Invalid horizon');
+ if(!['bullish','bearish'].includes(direction))fail('Invalid direction');
+ if(!finite(target)||!finite(invalidation))fail('Finite target and invalidation required');
+ const initial=bars[cutoffIndex].close;
+ if(direction==='bullish'&&!(invalidation<initial&&target>initial)||direction==='bearish'&&!(target<initial&&invalidation>initial))fail('Target/invalidation must bound cutoff close');
+ const future=bars.slice(cutoffIndex+1,cutoffIndex+1+horizon);
+ let outcome='censored',offset=null,mae=0,mfe=0,examined=0;
+ for(let i=0;i<future.length;i++){
+   const b=future[i];examined++;const good=direction==='bullish'?b.high>=target:b.low<=target;
+   const bad=direction==='bullish'?b.low<=invalidation:b.high>=invalidation;
+   const adverse=direction==='bullish'?initial-b.low:b.high-initial;
+   const favorable=direction==='bullish'?b.high-initial:initial-b.low;
+   mae=Math.max(mae,adverse);mfe=Math.max(mfe,favorable);
+   if(good&&bad){outcome='ambiguous-same-bar';offset=i+1;break;}
+   if(good||bad){outcome=good?'target-first':'invalidation-first';offset=i+1;break;}
+ }
+ if(outcome==='censored'&&future.length===horizon)outcome='neither-within-horizon';
+ return {outcome,candlesExamined:examined,firstEventAt:offset,cutoffTime:bars[cutoffIndex].time,maxAdverseExcursion:mae,maxFavorableExcursion:mfe,completeHorizon:future.length===horizon};
+}
+/** Source changes are manually supplied; there is no hidden network scraping. */
+function compareSnapshots(previous,current){
+ if(!Array.isArray(previous)||!Array.isArray(current))fail('Snapshot arrays required');
+ for(const a of [...previous,...current])if(!a||typeof a!=='object'||typeof a.url!=='string'||typeof a.title!=='string'||typeof a.date!=='string')fail('Snapshot requires URL, title, date');
+ const key=u=>{const a=new URL(u);if(a.protocol!=='https:'||a.hostname!=='elliottwavemonitor.com'||!a.pathname.startsWith('/en/'))fail('Unapproved source URL');return a.origin+a.pathname.replace(/\/+$/,'')+'/';};
+ const a=new Map(previous.map(x=>[key(x.url),x])),b=new Map(current.map(x=>[key(x.url),x]));
+ if(a.size!==previous.length||b.size!==current.length)fail('Duplicate snapshot URLs');
+ const added=[],removed=[],changed=[];
+ for(const [url,record] of b){if(!a.has(url))added.push({url,record});else if(['title','date','summary'].some(k=>String(a.get(url)[k]??'')!==String(record[k]??'')))changed.push({url,before:a.get(url),after:record});}
+ for(const [url,record] of a)if(!b.has(url))removed.push({url,record});
+ return {added,removed,changed,unchanged:current.length-added.length-changed.length};
+}
+/** Formula injection protection for CSV exports. */
+function csvCell(v){let s=String(v??'');if(typeof v!=='number'&&/^[\s\x00-\x1f]*[=+@-]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
+function exportCSV(rows,keys){if(!Array.isArray(rows)||rows.length>MAX_BARS||!Array.isArray(keys)||!keys.every(k=>typeof k==='string'))fail('Invalid CSV export');return [keys.map(csvCell).join(','),...rows.map(r=>keys.map(k=>csvCell(r[k])).join(','))].join('\r\n')+'\r\n';}
+
+return {TF_MINUTES,TIMEFRAMES,MAX_CSV_BYTES,MAX_BARS,parseTimestamp,parseOHLC,validateBars,resampleM1,sma,ema,lwma,bollinger,bbmaSnapshot,validateImpulse,fibonacciExtensions,evaluateScenario,compareSnapshots,csvCell,exportCSV};
+})();
+const __locale = (()=>{
+
+const dictionary={
+ en:{overview:'Overview',news:'News & Analysis',markets:'Markets',education:'Education',lab:'Wave Lab',studio:'Research Studio',saved:'Saved',headhome:'Read the structure.',headnews:'Latest News & Analysis',headeducation:'Understand the wave before the forecast',headlab:'Wave Lab',headsources:'Source coverage and limitations',headsaved:'Saved research',note:'Archived research · no live prices'},
+ ar:{overview:'الرئيسية',news:'الأخبار والتحليلات',markets:'الأسواق',education:'التعليم',lab:'مختبر الموجات',studio:'مختبر الأبحاث',saved:'المحفوظات',headhome:'اقرأ البنية الموجية.',headnews:'آخر الأخبار والتحليلات',headeducation:'افهم الموجات قبل التوقعات',headlab:'مختبر الموجات',headsources:'المصادر والحدود',headsaved:'الأبحاث المحفوظة',note:'أبحاث مؤرشفة · لا توجد أسعار مباشرة'}
+};
+const LOCALES=Object.freeze(Object.keys(dictionary));
+function translate(key,language='en'){return dictionary[language]?.[key]??dictionary.en[key]??key;}
+function currentLocale(){return document.documentElement.lang==='ar'?'ar':'en';}
+function applyLanguage(){
+ const lang=currentLocale();document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+ document.querySelectorAll('[data-i18n]').forEach(node=>{node.textContent=translate(node.dataset.i18n,lang);});
+ const route=String(location.hash).split('/')[1];
+ const headings={news:'headnews',education:'headeducation',lab:'headlab',saved:'headsaved',sources:'headsources'};
+ if(lang==='ar'&&headings[route]){const title=document.querySelector('.page-head h1');if(title)title.textContent=translate(headings[route],lang);}
+ const select=document.querySelector('#language-select');if(select)select.value=lang;
+}
+
+return {LOCALES,translate,currentLocale,applyLanguage};
+})();
+const __studio = (()=>{
+const {articles}=__data;const {escapeHTML:e}=__logic;const {TIMEFRAMES,TF_MINUTES,MAX_CSV_BYTES,parseOHLC,resampleM1,bbmaSnapshot,validateImpulse,fibonacciExtensions,evaluateScenario,compareSnapshots,exportCSV}=__engine;
+
+const storageKey='wavescope.research-journal.v2';
+const drawingsKey='wavescope.wave-drawings.v1';
+const pick=s=>document.querySelector(s);
+const readLocal=(key,defaultValue)=>{try{const raw=localStorage.getItem(key);const value=raw?JSON.parse(raw):defaultValue;return value??defaultValue;}catch{return defaultValue;}};
+const writeLocal=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
+const records=new Map();
+const derivedCache=new Map();
+const state={timeframe:'H1',symbol:'XAUUSD',offset:0,closed:false,error:'',note:'',cutoff:0,
+  drawings:readLocal(drawingsKey,[]).filter(x=>x&&Array.isArray(x.points)).slice(-50),
+  journal:readLocal(storageKey,[]).filter(x=>x&&typeof x==='object').slice(-100),
+  result:null};
+const ar={title:'مختبر الأبحاث',subtitle:'استورد بيانات OHLC محلية — بدون أوامر تداول أو اتصال وسطاء أو أسعار افتراضية.',source:'بيانات الشموع',symbol:'الرمز',tf:'الإطار الزمني',offset:'فرق توقيت الوسيط من UTC بالدقائق',closed:'الصف الأخير شمعة مكتملة',file:'استيراد ملف CSV',dashboard:'لوحة 21 إطارًا زمنيًا',chart:'مخطط الشموع',bbma:'قراءة BBMA',draw:'الترقيم الموجي',evaluate:'تقييم تاريخي',monitor:'مقارنة المصادر',export:'تصدير',none:'لا توجد بيانات لهذا الإطار',missing:'غير متوفر',ready:'جاهز',warnings:'المحدوديات',save:'حفظ الترقيم',check:'التحقق من الموجات',run:'اختبار التاريخ',report:'تصدير تقرير JSON',bars:'تصدير الشموع CSV',snapshot:'مقارنة سجلات المصادر',result:'النتيجة'};
+const en={title:'Research Studio',subtitle:'Import local OHLC evidence. No orders, broker connection, invented quotes or automatic forecasts.',source:'Candle data',symbol:'Symbol',tf:'Timeframe',offset:'Broker offset from UTC (minutes)',closed:'Last CSV row is a confirmed closed candle',file:'Import CSV file',dashboard:'21-timeframe coverage',chart:'Completed-candle chart',bbma:'BBMA descriptive snapshot',draw:'Wave-count workspace',evaluate:'Historical replay',monitor:'Source comparison',export:'Export & audit',none:'No data for this timeframe',missing:'Unavailable',ready:'Ready',warnings:'Limitations',save:'Save count',check:'Validate wave',run:'Evaluate history',report:'Export JSON report',bars:'Export OHLC CSV',snapshot:'Compare source snapshots',result:'Result'};
+const i18n=()=>document.documentElement.lang==='ar'?ar:en;
+const stamp=t=>new Date(t).toISOString().replace('T',' ').slice(0,16)+' UTC';
+const n=v=>typeof v==='number'&&Number.isFinite(v)?Number(v.toFixed(6)).toLocaleString('en-US',{maximumFractionDigits:6}):'—';
+const getBars=(tf)=>{
+  const direct=records.get(tf);if(direct)return {bars:direct.bars,mode:'Direct broker CSV',label:direct.label};
+  if(records.has('M1')&&tf!=='W1'&&tf!=='MN1'){
+    if(!derivedCache.has(tf))derivedCache.set(tf,resampleM1(records.get('M1').bars,tf));
+    const derived=derivedCache.get(tf);
+    if(derived.length)return {bars:derived,mode:'M1-derived; complete contiguous buckets only',label:'M1 broker CSV'};
+  }
+  return null;
+};
+function tableCoverage(){const l=i18n();return `<div class="tf-grid">${TIMEFRAMES.map(tf=>{const data=getBars(tf),num=data?.bars.length||0;return `<button type="button" class="tf-card ${state.timeframe===tf?'selected':''}" data-timeframe="${tf}" aria-pressed="${state.timeframe===tf}"><strong>${tf}</strong><small>${num?`${num} closed`:(l.missing)}</small><span>${data?'●':'○'}</span></button>`;}).join('')}</div>`;}
+function chartSvg(bars){if(!bars?.length)return `<div class="empty"><h3>${e(i18n().none)}</h3><p>Import real, completed OHLC data from a local CSV file. No synthetic chart is generated.</p></div>`;
+ const sample=bars.slice(-72), min=Math.min(...sample.map(b=>b.low)),max=Math.max(...sample.map(b=>b.high));
+ const range=max-min||1,pad=18,top=25,height=272,w=960, step=(w-2*pad)/sample.length,scale=v=>top+(max-v)/range*height;
+ const candles=sample.map((b,i)=>{const x=pad+i*step+step/2,open=scale(b.open),close=scale(b.close),hi=scale(b.high),lo=scale(b.low),up=b.close>=b.open,color=up?'#43d2b1':'#e58a81',wide=Math.max(2,step*.65);return `<g><line x1="${x}" x2="${x}" y1="${hi}" y2="${lo}" stroke="${color}" stroke-width="1.8"/><rect x="${x-wide/2}" y="${Math.min(open,close)}" width="${wide}" height="${Math.max(1,Math.abs(open-close))}" fill="${color}"/></g>`;}).join('');
+ const rows=Array.from({length:5},(_,j)=>{const y=top+j*height/4;return `<line x1="0" x2="960" y1="${y}" y2="${y}" stroke="#7090ac" opacity=".25"/><text x="952" y="${y-4}" text-anchor="end" fill="#c7d3e4" font-size="13">${e(n(max-j*range/4))}</text>`;}).join('');
+ return `<div class="chart-wrapper"><svg class="candle-chart" viewBox="0 0 960 335" role="img" aria-label="${sample.length} historical completed OHLC candles, ${e(state.timeframe)}. No projected candles."><rect width="960" height="335" fill="#0b1b33"/>${rows}${candles}<text x="14" y="328" font-size="12" fill="#d7e6f3">${e(stamp(sample[0].time))} → ${e(stamp(sample.at(-1).time))} · Historical completed candles</text></svg></div>`;
+}
+function indicatorCard(bars){const label=i18n().bbma;
+ if(!bars)return `<div class="research-card"><h3>${e(label)}</h3><p>No local candle data loaded. Indicator calculations are unavailable.</p></div>`;
+ const model=bbmaSnapshot(bars);
+ if(model.status!=='ready')return `<div class="research-card"><h3>${e(label)}</h3><p>Warmup incomplete: ${model.available}/${model.needed} closed bars. No indicator interpretation.</p></div>`;
+ return `<div class="research-card"><h3>${e(label)}</h3><div class="facts-stack"><div><small>Last close</small><strong>${n(model.close)}</strong></div><div><small>EMA 50</small><strong>${n(model.ema50)}</strong></div><div><small>BB 20,2 middle / upper / lower</small><strong>${n(model.bb.mid)} / ${n(model.bb.upper)} / ${n(model.bb.lower)}</strong></div><div><small>LWMA 5 & 10 high</small><strong>${n(model.ma5hi)} / ${n(model.ma10hi)}</strong></div><div><small>LWMA 5 & 10 low</small><strong>${n(model.ma5lo)} / ${n(model.ma10lo)}</strong></div><div><small>Close position</small><strong>${e(model.position)} · ${e(model.bias)}</strong></div></div><p class="minor">Descriptive indicators on completed bars; no signal, forecast probability, or execution.</p></div>`;
+}
+function waveGraphic(points){if(points.some(v=>!Number.isFinite(v)))return '';
+ const low=Math.min(...points),high=Math.max(...points),rng=high-low||1;
+ const coords=points.map((v,i)=>`${40+i*175},${220-(v-low)/rng*175}`).join(' ');
+ return `<svg viewBox="0 0 980 260" role="img" aria-label="User supplied six-point Elliott Wave count illustration"><rect width="980" height="260" rx="12" fill="#0d2340"/><polyline fill="none" stroke="#60d5bd" stroke-width="3" points="${coords}"/>${points.map((v,i)=>`<g><circle cx="${40+i*175}" cy="${220-(v-low)/rng*175}" r="5" fill="#eccc83"/><text x="${40+i*175}" y="${Math.max(13,210-(v-low)/rng*175)}" fill="white" font-size="13" text-anchor="middle">${['0','1','2','3','4','5'][i]} · ${n(v)}</text></g>`).join('')}</svg>`;
+}
+function drawWorkspace(){const l=i18n();return `<section class="research-card"><h2>${e(l.draw)}</h2><p>Enter six actual pivot prices in chronological order. The tool checks a <strong>standard impulse</strong>; it does not identify swings automatically or confirm a market forecast.</p><div class="pivot-grid">${['Origin (0)','Wave 1','Wave 2','Wave 3','Wave 4','Wave 5'].map((x,i)=>`<label>${x}<input type="number" step="any" inputmode="decimal" id="pivot-${i}" value="" placeholder="Price ${i+1}" /></label>`).join('')}</div><div class="action-row"><select id="pivot-direction" aria-label="Impulse direction"><option value="bullish">Bullish impulse</option><option value="bearish">Bearish impulse</option></select><button class="studio-btn" data-action="validate-wave">${e(l.check)}</button><button class="studio-btn secondary" data-action="save-wave">${e(l.save)}</button></div><div id="wave-validation" aria-live="polite" class="minor">No wave count has been submitted.</div><div id="wave-preview"></div><div id="wave-records" class="minor">${state.drawings.length} locally saved counts</div></section>`;}
+function replayWorkspace(){const l=i18n();const current=getBars(state.timeframe);return `<section class="research-card"><h2>${e(l.evaluate)}</h2><p>Cutoff index is zero-based. The evaluator uses <strong>only later candles</strong> to determine which threshold was touched first. If both thresholds are hit within one candle, the result is explicitly ambiguous.</p><div class="pivot-grid"><label>Cutoff index<input type="number" id="replay-cutoff" min="0" step="1" value="${current?Math.max(0,current.bars.length-26):0}"></label><label>Horizon (completed candles)<input type="number" id="replay-horizon" min="1" max="1000" step="1" value="24"></label><label>Reference target<input type="number" step="any" id="replay-target" placeholder="Source scenario threshold"></label><label>Invalidation<input type="number" step="any" id="replay-invalidation" placeholder="Source invalidation threshold"></label></div><div class="action-row"><select id="replay-direction" aria-label="Scenario direction"><option value="bullish">Bullish</option><option value="bearish">Bearish</option></select><button class="studio-btn" data-action="evaluate">${e(l.run)}</button></div><div id="replay-result" aria-live="polite">${state.result?renderResult(state.result):'<p class="minor">Import historical data and set source-backed targets first.</p>'}</div></section>`;}
+function renderResult(result){return `<div class="notice"><strong>Outcome: ${e(result.outcome)}</strong><p>${result.candlesExamined} candles inspected · first event offset ${result.firstEventAt??'none'} · max adverse excursion ${n(result.maxAdverseExcursion)} · max favorable excursion ${n(result.maxFavorableExcursion)}. Full horizon: ${result.completeHorizon?'yes':'no'}.</p></div>`;}
+function sourceWorkspace(){const l=i18n();return `<section class="research-card"><h2>${e(l.monitor)}</h2><p>Paste two arrays of article metadata (<code>url</code>, <code>title</code>, <code>date</code>, optional <code>summary</code>) to compare <strong>manually captured</strong> public-source records. No website crawler or live fetch is installed.</p><div class="snapshot-grid"><label>Previous JSON<textarea id="snapshot-before" spellcheck="false" rows="5" placeholder='[{"url":"https://elliottwavemonitor.com/en/article/","title":"Example","date":"2026-11-01"}]'></textarea></label><label>Current JSON<textarea id="snapshot-after" spellcheck="false" rows="5" placeholder="Paste the newer source snapshot"></textarea></label></div><div class="action-row"><button class="studio-btn" data-action="compare">${e(l.snapshot)}</button><button class="studio-btn secondary" data-action="export-index">Export existing curated index</button></div><div id="snapshot-result" aria-live="polite" class="minor">No snapshots compared.</div></section>`;}
+function exportWorkspace(){const l=i18n();return `<section class="research-card"><h2>${e(l.export)}</h2><p>Export locally. A report contains provenance, timeframes, indicator summaries, wave counts and scenario history; raw OHLC is exported separately. No data is uploaded.</p><div class="action-row"><button class="studio-btn" data-action="export-report">${e(l.report)}</button><button class="studio-btn secondary" data-action="export-bars">${e(l.bars)}</button><button class="studio-btn secondary" data-action="export-journal">Scenario journal CSV</button></div><h3>Scenario journal (${state.journal.length})</h3><div class="journal-list">${state.journal.slice(-8).reverse().map(x=>`<p>${e(x.symbol)} ${e(x.timeframe)} · ${e(x.direction)} · ${e(x.outcome)} · ${e(x.reviewedAt)}</p>`).join('')||'<p class="minor">No historical evaluations recorded.</p>'}</div><p class="minor"><strong>Security:</strong> CSV fields are escaped against formula injection; imported data and source JSON are validated locally; local journal storage is capped at 100 records.</p></section>`;}
+function limitations(){return `<section class="research-card"><h2>${e(i18n().warnings)}</h2><ul><li>MT4/MT5 mobile does not run desktop MQL exporter scripts. Export CSV from desktop terminal or from a separate authorized data source, then import it manually.</li><li>M1-derived higher frames require uninterrupted minute buckets. W1/MN1, session-aware bars and exact broker time boundaries need native broker exports.</li><li>Imported timestamps are interpreted with the explicitly selected fixed broker UTC offset, without DST inference.</li><li>BBMA results are informational. No automated wave labeling, tick-stream connection, trading instruction or price prediction.</li><li>Publisher reports are dated evidence. Historical scenario outcomes and later edits are not live confirmations.</li></ul></section>`;}
+function studioHTML(){const l=i18n();const selected=getBars(state.timeframe);return `<section class="page-head container"><div class="eyebrow">CREA RESEARCH · OFFLINE</div><h1>${e(l.title)}</h1><p>${e(l.subtitle)}</p></section><div class="container research-layout"><div class="research-card"><div class="section-heading"><div><h2>${e(l.source)}</h2><p>MetaTrader 4 / 5 tab, comma or semicolon OHLC CSV · UTF-8 · max 4 MiB · no account credentials</p></div></div><div class="research-form"><label>${e(l.symbol)}<input id="studio-symbol" maxlength="32" value="${e(state.symbol)}"></label><label>${e(l.tf)}<select id="studio-import-tf">${TIMEFRAMES.map(x=>`<option value="${x}" ${x===state.timeframe?'selected':''}>${x}</option>`).join('')}</select></label><label>${e(l.offset)}<input id="studio-offset" type="number" min="-840" max="840" value="${state.offset}"></label><label class="file-label">${e(l.file)}<input id="studio-file" type="file" accept=".csv,.txt,text/csv,text/plain"></label><label class="check-label"><input id="studio-last-closed" type="checkbox" ${state.closed?'checked':''}>${e(l.closed)}</label></div><div class="notice">By default the final CSV row is excluded to avoid incomplete-candle lookahead. Select the checkbox only when the source exporter guarantees all rows are closed.</div><p id="studio-message" role="status">${e(state.error||state.note||'No market data imported. Historical article levels do not populate candle charts.')}</p></div><section class="research-card"><h2>${e(l.dashboard)}</h2><p>Select a timeframe. Direct broker CSV takes precedence; M1-derived bars appear only if a bucket is complete.</p>${tableCoverage()}</section><div class="research-card"><div class="section-heading"><div><h2>${e(l.chart)} · ${e(state.timeframe)}</h2><p>${selected?`${selected.bars.length} completed bars · ${e(selected.mode)}`:'Unavailable until supported CSV import'}</p></div></div>${chartSvg(selected?.bars)}</div>${indicatorCard(selected?.bars)}${drawWorkspace()}${replayWorkspace()}${sourceWorkspace()}${exportWorkspace()}${limitations()}</div>`;}
+function displayMessage(message,error=false){state.error=error?String(message):'';state.note=error?'':String(message);const box=pick('#studio-message');if(box)box.textContent=message;}
+function download(filename,body,mime){const blob=new Blob([body],{type:mime});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function getPivots(){return Array.from({length:6},(_,i)=>{const text=pick(`#pivot-${i}`)?.value?.trim();if(!text)throw Error(`Missing pivot ${i}`);const n=Number(text);if(!Number.isFinite(n))throw Error('Nonfinite pivot');return n;});}
+function showWave(persist){const points=getPivots(),direction=pick('#pivot-direction').value,check=validateImpulse(points,direction),ext=fibonacciExtensions(points[0],points[1],points[2]);
+ const summary=`${check.valid?'Valid standard-impulse constraints':'Invalid standard-impulse constraints'}: ${Object.entries(check.checks).map(([k,v])=>`${k}=${v?'PASS':'FAIL'}`).join(' · ')}. Illustrative extensions from wave 1: ${ext.slice(0,3).map(x=>`${x.ratio}×=${n(x.level)}`).join(', ')}.`;
+ pick('#wave-validation').textContent=summary;pick('#wave-preview').innerHTML=waveGraphic(points);
+ if(persist){state.drawings.push({time:new Date().toISOString(),timeframe:state.timeframe,symbol:state.symbol,points,direction,valid:check.valid});state.drawings=state.drawings.slice(-50);writeLocal(drawingsKey,state.drawings);pick('#wave-records').textContent=`${state.drawings.length} locally saved counts`;}
+}
+function evaluate(){const entry=getBars(state.timeframe);if(!entry)throw Error('Import historical candles for this timeframe');
+ const getNum=id=>{const v=pick(id).value;if(!v.trim())throw Error(`Missing ${id}`);return Number(v);};
+ const direction=pick('#replay-direction').value,target=getNum('#replay-target'),invalidation=getNum('#replay-invalidation'),cutoffIndex=getNum('#replay-cutoff'),horizon=getNum('#replay-horizon');
+ const result=evaluateScenario(entry.bars,{cutoffIndex,horizon,direction,target,invalidation});state.result=result;
+ state.journal.push({reviewedAt:new Date().toISOString(),symbol:state.symbol,timeframe:state.timeframe,direction,target,invalidation,cutoffIndex,horizon,...result});
+ state.journal=state.journal.slice(-100);writeLocal(storageKey,state.journal);
+ pick('#replay-result').innerHTML=renderResult(result);
+ const journal=pick('.journal-list');if(journal)journal.innerHTML=state.journal.slice(-8).reverse().map(x=>`<p>${e(x.symbol)} ${e(x.timeframe)} · ${e(x.direction)} · ${e(x.outcome)} · ${e(x.reviewedAt)}</p>`).join('');
+}
+function compare(){const left=JSON.parse(pick('#snapshot-before').value),right=JSON.parse(pick('#snapshot-after').value);if(JSON.stringify(left).length>250000||JSON.stringify(right).length>250000)throw Error('Snapshot too large');
+ const diff=compareSnapshots(left,right);pick('#snapshot-result').textContent=`Added: ${diff.added.length} · Removed: ${diff.removed.length} · Changed: ${diff.changed.length} · Unchanged: ${diff.unchanged}. ${diff.changed.map(x=>x.url).slice(0,10).join(' , ')}`;
+}
+function exportReport(){const coverage=TIMEFRAMES.map(tf=>{const item=getBars(tf);return {timeframe:tf,barCount:item?.bars.length||0,origin:item?.mode||null,lastTime:item?.bars.at(-1)?.time||null,bbma:item?.bars.length?bbmaSnapshot(item.bars):null};});
+ const report={format:'wavescope-local-research-v2',generatedAt:new Date().toISOString(),source:'Local imported historical OHLC; not live',symbol:state.symbol,brokerOffsetMinutes:state.offset,coverage,drawings:state.drawings,journal:state.journal,disclaimer:'Educational retrospective, not investment advice. No probabilities calculated.'};download('wavescope-research.json',JSON.stringify(report,null,2),'application/json');}
+async function loadFile(file){if(!file) return;if(file.size>MAX_CSV_BYTES)throw Error('CSV exceeds 4 MiB limit');
+ const text=await file.text(),tf=pick('#studio-import-tf').value,offset=Number(pick('#studio-offset').value),alreadyClosed=pick('#studio-last-closed').checked;
+ if(!(tf in TF_MINUTES)||!Number.isInteger(offset)||Math.abs(offset)>840)throw Error('Invalid timeframe or UTC offset');
+ const bars=parseOHLC(text,{brokerOffsetMinutes:offset,alreadyClosed});
+ records.set(tf,{bars,label:file.name});state.timeframe=tf;state.offset=offset;state.closed=alreadyClosed;
+ displayMessage(`Loaded ${bars.length} completed ${tf} candles from ${file.name}. Last timestamp ${stamp(bars.at(-1).time)}. No live feed or future bar.`);
+ pick('#main').innerHTML=studioHTML();
+}
+function studioHandleClick(event){const tfButton=event.target.closest('[data-timeframe]');if(tfButton){state.timeframe=tfButton.dataset.timeframe;pick('#main').innerHTML=studioHTML();return true;}
+ const button=event.target.closest('[data-action]');if(!button)return false;
+ try {switch(button.dataset.action){case 'validate-wave':showWave(false);break;case 'save-wave':showWave(true);break;case 'evaluate':evaluate();break;case 'compare':compare();break;
+ case 'export-report':exportReport();break;
+ case 'export-bars':{const data=getBars(state.timeframe);if(!data)throw Error('No candles available to export');download(`${state.symbol}-${state.timeframe}-closed.csv`,exportCSV(data.bars,['time','open','high','low','close','volume']),'text/csv');break;}
+ case 'export-journal':download('wavescope-scenario-journal.csv',exportCSV(state.journal,['reviewedAt','symbol','timeframe','direction','target','invalidation','outcome','candlesExamined','maxAdverseExcursion','maxFavorableExcursion']),'text/csv');break;
+ case 'export-index':download('wavescope-original-source-index.json',JSON.stringify(articles.map(({title,date,url,summary})=>({title,date,url,summary})),null,2),'application/json');break;
+ default:return false;}
+ }catch(err){const node=pick(button.dataset.action==='compare'?'#snapshot-result':button.dataset.action==='evaluate'?'#replay-result':'#wave-validation')||pick('#studio-message');if(node)node.textContent=`Error: ${err.message}`;}
+ return true;}
+function studioHandleChange(event){if(event.target.id==='studio-file'){loadFile(event.target.files?.[0]).catch(err=>displayMessage(`Import rejected: ${err.message}`,true));return true;}
+ if(event.target.id==='studio-symbol'){const v=event.target.value.toUpperCase().trim();if(/^[A-Z0-9._-]{1,32}$/.test(v))state.symbol=v;else displayMessage('Symbol must contain only letters, numbers, dot, underscore or hyphen',true);return true;}
+ if(event.target.id==='studio-offset'){const n=Number(event.target.value);if(Number.isInteger(n)&&Math.abs(n)<=840)state.offset=n;else displayMessage('UTC offset out of range',true);return true;}
+ return false;}
+
+return {studioHTML,studioHandleClick,studioHandleChange};
+})();
+(()=>{const {articles,categories,originalCategoryLinks,SOURCE_ROOT}=__data;const {retracementLevels,escapeHTML:esc,safeSourceLink,filterArticles,parseRoute}=__logic;const {studioHTML,studioHandleClick,studioHandleChange}=__studio;const {applyLanguage,currentLocale}=__locale;
+const $=s=>document.querySelector(s);
+const main=$('#main');
+const STORAGE='wavescope.bookmarks.v1', THEME='wavescope.theme.v1', LANGUAGE='wavescope.language.v1';
+try{document.documentElement.lang=localStorage.getItem(LANGUAGE)==='ar'?'ar':'en';}catch{document.documentElement.lang='en';}
+const readSaved=()=>{try{const d=JSON.parse(localStorage.getItem(STORAGE)||'[]');return new Set(Array.isArray(d)?d.filter(v=>typeof v==='string'):[]);}catch{return new Set();}};
+const state={saved:readSaved(),query:'',sort:'newest',page:1};
+const fmt=date=>new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
+const cat=id=>categories.find(x=>x.id===id)||categories[0];
+const source=article=>safeSourceLink(article.url)||SOURCE_ROOT;
+const cardWave=()=>`<svg role="img" aria-label="Decorative Elliott Wave pattern, not market data" viewBox="0 0 490 170" preserveAspectRatio="none"><defs><pattern id="g" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M35 0H0V35" fill="none" stroke="#ffffff" stroke-opacity=".09"/></pattern></defs><rect width="100%" height="100%" fill="url(#g)"/><path d="M-10 142 L65 125 L122 137 L202 58 L262 91 L330 33 L394 66 L498 21" stroke="#70dfc6" stroke-width="3" fill="none" opacity=".86"/><path d="M-5 150 L69 146 L140 150 L200 118 L258 135 L330 95 L405 115 L498 88" stroke="#e6b65b" stroke-width="1.4" fill="none" stroke-dasharray="6 6" opacity=".6"/><g fill="#f8df91" font-size="15" font-weight="700"><text x="200" y="48">1</text><text x="260" y="110">2</text><text x="330" y="24">3</text><text x="394" y="86">4</text><text x="471" y="15">5</text></g></svg>`;
+const bigWave=()=>`<div class="wave-panel"><div class="wave-head"><span>ELLIOTT WAVE · STRUCTURAL MODEL</span><span>1–2–3–4–5</span></div><svg viewBox="0 0 530 275" role="img" aria-label="Illustrative five-wave motive sequence, not a price forecast"><defs><pattern id="gr" width="40" height="36" patternUnits="userSpaceOnUse"><path d="M40 0H0V36" fill="none" stroke="#91b4da" stroke-opacity=".12"/></pattern></defs><rect x="0" y="0" width="530" height="275" fill="url(#gr)"/><path d="M22 237 L95 157 L148 203 L261 64 L321 123 L452 27" stroke="#64ddbe" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M452 27 L484 72 L508 52" fill="none" stroke="#efc36d" stroke-width="3" stroke-dasharray="7 7"/><g fill="#e8eef5" font-family="system-ui" font-weight="750" font-size="16"><text x="93" y="140">1</text><text x="143" y="225">2</text><text x="259" y="45">3</text><text x="315" y="145">4</text><text x="447" y="18">5</text></g><g fill="#56dfbb"><circle cx="95" cy="157" r="5"/><circle cx="148" cy="203" r="5"/><circle cx="261" cy="64" r="5"/><circle cx="321" cy="123" r="5"/><circle cx="452" cy="27" r="5"/></g><g fill="#7794b0" font-size="11" font-family="system-ui"><text x="6" y="265">IDEALISED STRUCTURE</text><text x="400" y="265">NOT LIVE DATA</text></g></svg><div class="wave-note">Conceptual illustration only. This line does not depict any real instrument, timeframe or market prediction.</div></div>`;
+const side=()=>`<aside class="sidebar"><div class="sidebar-box"><h3>Explore markets</h3><div class="sidebar-links">${categories.filter(c=>c.id!=='all').map(c=>`<a href="#/category/${esc(c.id)}">${esc(c.icon)} ${esc(c.label)} <span>${articles.filter(a=>a.category===c.id).length} ↗</span></a>`).join('')}</div></div><div class="sidebar-box"><h3>Recently indexed</h3>${articles.slice(0,5).map(a=>`<a href="#/article/${esc(a.id)}" class="latest-link"><strong>${esc(a.title)}</strong><small>${fmt(a.date)} · ${esc(a.timeframe)}</small></a>`).join('')}</div><div class="sidebar-box"><h3>Research integrity</h3><div class="callout">Historical editorial snapshots are not a live feed. Forecast arrows represent proposals, not observed future candles. Always inspect the dated source.</div><a href="#/sources" style="display:block;margin-top:12px;color:var(--accent);font-weight:800;font-size:12px">Read provenance policy ↗</a></div></aside>`;
+const marketCards=()=>`<div class="market-grid">${categories.filter(c=>!['all','macro','education'].includes(c.id)).map(c=>`<a class="market-card" href="#/category/${esc(c.id)}"><div class="market-icon">${esc(c.icon)}</div><h3>${esc(c.label)}</h3><p>${esc(c.description)}</p><span>${articles.filter(a=>a.category===c.id).length} indexed reports ↗</span></a>`).join('')}</div>`;
+function card(a){const saved=state.saved.has(a.id);return `<article class="article-card"><a href="#/article/${esc(a.id)}" aria-label="Read ${esc(a.title)}" class="art-banner ${esc(a.category)}">${cardWave()}<span class="banner-symbol">${esc(a.symbol)}</span><span class="banner-chip">${esc(a.timeframe)} · HISTORICAL</span></a><div class="article-body"><div class="meta"><span class="category-label">${esc(cat(a.category).label)}</span><span>·</span><time datetime="${esc(a.date)}">${fmt(a.date)}</time><span>· ${a.read} min</span></div><h3><a href="#/article/${esc(a.id)}">${esc(a.title)}</a></h3><p>${esc(a.summary)}</p><div class="article-actions"><a href="#/article/${esc(a.id)}">Explore report ↗</a><button class="bookmark" type="button" data-bookmark="${esc(a.id)}" aria-label="${saved?'Remove saved article':'Save article'}" aria-pressed="${saved}">${saved?'★':'☆'}</button></div></div></article>`;}
+const header=(eyebrow,title,description)=>`<section class="page-head container"><div class="eyebrow">${esc(eyebrow)}</div><h1>${esc(title)}</h1><p>${esc(description)}</p></section>`;
+function listSection({title='Latest analysis',description='',items=articles,category='all',filters=false}){
+ const visible=filterArticles(items,{category,query:filters?state.query:'',sort:state.sort});
+ const pages=Math.max(1,Math.ceil(visible.length/8));state.page=Math.min(state.page,pages);
+ const selected=visible.slice((state.page-1)*8,state.page*8);
+ const filterMarkup=filters?`<div class="toolbar"><input class="search" id="searchbox" type="search" aria-label="Search research articles" placeholder="Search articles, XAUUSD, H1, Fibonacci…" value="${esc(state.query)}" autocomplete="off"><label for="sortbox" class="eyebrow" style="letter-spacing:0">Sort</label><select id="sortbox" class="select"><option value="newest" ${state.sort==='newest'?'selected':''}>Newest first</option><option value="oldest" ${state.sort==='oldest'?'selected':''}>Oldest first</option></select></div>`:'';
+ return `<div class="section-heading"><div><div class="eyebrow">PUBLIC SOURCE INDEX</div><h2>${esc(title)}</h2>${description?`<p>${esc(description)}</p>`:''}</div><a href="#/sources">About sources ↗</a></div>${filterMarkup}${selected.length?`<div class="article-grid">${selected.map(card).join('')}</div>`:`<div class="empty"><span>⌕</span><h3>No matching indexed reports</h3><p>Change the search or browse the original publisher for more coverage.</p></div>`}${visible.length>8?`<div class="pagination" aria-label="Results pages"><button type="button" class="page-btn" data-page="${state.page-1}" ${state.page<=1?'disabled':''}>‹</button>${Array.from({length:pages},(_,i)=>`<button type="button" class="page-btn ${state.page===i+1?'active':''}" aria-label="Page ${i+1}" data-page="${i+1}">${i+1}</button>`).join('')}<button type="button" class="page-btn" data-page="${state.page+1}" ${state.page>=pages?'disabled':''}>›</button></div>`:''}<p class="page-intro" style="font-size:12px;margin-top:15px">Showing ${selected.length} of ${visible.length} independently indexed snapshots. Coverage is selective, not a full website scrape.</p>`;
+}
+function home(){const featured=[articles[0],articles[2],articles[3],articles[4]];return `<section class="hero"><div class="container hero-inner"><div><div class="eyebrow" style="color:#75e6bd">INDEPENDENT MARKET RESEARCH ARCHIVE</div><h1>Read the structure.<br><em>Challenge the forecast.</em></h1><p>Explore published Elliott Wave scenarios across gold, forex, indices, commodities and crypto — with source provenance, archived context and clear distinction between observation and projection.</p><div class="hero-actions"><a class="btn primary" href="#/news">Explore latest research ↗</a><a class="btn ghost" href="#/lab">Open Wave Lab</a></div></div>${bigWave()}</div></section><div class="container"><div class="stat-strip"><div class="stat"><strong>${articles.length}</strong><small>Curated article references</small></div><div class="stat"><strong>6</strong><small>Market / news categories</small></div><div class="stat"><strong>H1 / H4</strong><small>Timeframes in sampled reports</small></div><div class="stat"><strong>Offline</strong><small>No API, login or deployment</small></div></div><section class="section"><div class="section-heading"><div><div class="eyebrow">MARKET COVERAGE</div><h2>Follow the markets</h2><p>Browse source-backed historical scenarios by asset class.</p></div><a href="#/news">Browse all ↗</a></div>${marketCards()}</section><section class="section"><div class="layout"><div>${listSection({title:'Latest indexed articles',description:'Dated source reports, not live chart signals.',items:featured})}<p style="margin-top:18px"><a class="btn outline" href="#/news">View all indexed research ↗</a></p></div>${side()}</div></section><section class="section"><div class="section-heading"><div><div class="eyebrow">EDUCATION</div><h2>Elliott Wave foundations</h2></div><a href="#/education">Learning library ↗</a></div>${methodCards()}</section></div>`;}
+function listing(category='all',page='news'){
+ const c=cat(category),isCategory=page==='category';const records=articles;
+ const heading=header(isCategory?'MARKET FORECAST ARCHIVE':'NEWS & ANALYSIS',isCategory?`${c.label} Analysis`:'Latest News & Analysis',isCategory?c.description:'Explore independently indexed articles, wave-count revisions, macro developments and education from public original reports.');
+ const chips=`<div class="tag-row" aria-label="Market filters">${categories.map(x=>`<a class="tag ${category===x.id?'active':''}" href="${x.id==='all'?'#/news':`#/category/${esc(x.id)}`}" ${category===x.id?'aria-current="page"':''}>${esc(x.label)}</a>`).join('')}</div>`;
+ return `${heading}<div class="container">${chips}<div class="layout"><div>${listSection({title:isCategory?c.label+' reports':'All indexed articles',items:records,category,filters:true})}${isCategory?`<p class="page-intro">For newer or unindexed ${esc(c.label.toLowerCase())} updates, <a href="${esc(originalCategoryLinks[category]||SOURCE_ROOT)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:800">visit the publisher's category ↗</a>.</p>`:''}</div>${side()}</div></div>`;
+}
+function detail(id){const a=articles.find(x=>x.id===id);if(!a)return notFound();const saved=state.saved.has(id);const rows=[['Instrument / topic',a.symbol],['Timeframe',a.timeframe],['Source interpretation',a.structure],['Fibonacci reference',a.fibonacci],['Scenario reference',a.reference],['Source invalidation',a.invalidation]];return `<div class="container"><div class="detail-layout"><article class="detail-main"><div class="breadcrumb"><a href="#/news">Research</a> / <a href="#/category/${esc(a.category)}">${esc(cat(a.category).label)}</a> / Article</div><div class="badge-stage">ARCHIVED SCENARIO · ${esc(a.timeframe)}</div><h1>${esc(a.title)}</h1><div class="meta"><span class="category-label">${esc(cat(a.category).label)}</span><time datetime="${esc(a.date)}">${fmt(a.date)}</time><span>${a.read} min source read</span><span>Source: EWM Team</span></div><div class="art-banner ${esc(a.category)}" style="height:245px;border-radius:14px;margin-top:23px">${cardWave()}<span class="banner-symbol">${esc(a.symbol)}</span><span class="banner-chip">Illustrative, not actual chart</span></div><p class="detail-summary">${esc(a.summary)}</p><div class="notice"><strong>Important:</strong> This is an independently written index entry, not the publisher's article. It preserves only selected analytical attributes for review. Source levels are historical and must not be treated as current.</div><section class="detail-section"><h2>Archived analytical record</h2><div class="fact-grid">${rows.map(([label,value])=>`<div class="fact"><small>${esc(label)}</small><strong>${value?esc(value):'Not established in the indexed source'}</strong></div>`).join('')}</div></section><section class="detail-section"><h2>Observed vs projected</h2><p>Wave labels in the report are the publisher's interpretation of a dated price chart. Any potential next wave, corrective destination or continuation level is a <strong>scenario</strong>, not a confirmed outcome. Later revisions may supersede the original count.</p>${a.id==='gold-london-1111'?'<p class="notice">A later New York report on the same date revised the interpretation. <a href="#/article/gold-ny-1111" style="color:var(--accent);font-weight:800">Review the newer report ↗</a></p>':''}</section><section class="detail-section"><h2>Publisher attribution</h2><p class="provenance">Title and factual report metadata were indexed from an original public article. The explanatory text and graphic here are original to WaveScope. No publisher image or full article was duplicated.</p><a class="btn outline" href="${esc(source(a))}" target="_blank" rel="noopener noreferrer">Read full original at Elliott Wave Monitor ↗</a> <button class="btn outline" data-bookmark="${esc(a.id)}" aria-pressed="${saved}">${saved?'★ Saved':'☆ Save report'}</button></section></article>${side()}</div></div>`;}
+function methodCards(){return `<div class="method-block"><div class="info-card"><div class="number">01</div><h3>Observe the structure</h3><p>Describe completed swing highs and lows without smuggling future paths into the recorded price series.</p></div><div class="info-card"><div class="number">02</div><h3>Assign a wave degree</h3><p>Keep H1 and H4 counts separate unless a documented mapping establishes the relationship.</p></div><div class="info-card"><div class="number">03</div><h3>Test invalidation</h3><p>Distinguish structural wave-rule failure from a missed Fibonacci waypoint or a scenario revision.</p></div></div>`;}
+function education(){return `${header('EDUCATION','Understand the wave before the forecast','A compact learning path derived from standard Elliott Wave concepts, with links to the publisher’s original explainers.')}<div class="container"><section class="section">${methodCards()}</section><section class="section"><div class="layout"><div><div class="section-heading"><div><div class="eyebrow">SOURCE-ATTRIBUTED READING</div><h2>Learning resources</h2></div></div><div class="article-grid">${articles.filter(a=>a.category==='education').map(card).join('')}</div><div class="info-card" style="margin-top:18px"><h3>Impulse count checks</h3><div class="wave-rules"><div class="wave-rule"><strong>Wave 2 origin</strong><small>In a standard impulse, wave 2 must not retrace beyond the origin of wave 1.</small></div><div class="wave-rule"><strong>Wave 3 length</strong><small>Wave 3 cannot be the shortest of waves 1, 3 and 5 when their price lengths are compared.</small></div><div class="wave-rule"><strong>Wave 4 overlap</strong><small>A standard impulse generally disallows wave 4 overlap with wave 1 price territory; diagonal structures have different rules.</small></div></div></div></div>${side()}</div></section></div>`;}
+function lab(){return `${header('OFFLINE LEARNING TOOL','Wave Lab','Interactive arithmetic and educational structure checks. No network calls, executable trading strategies, broker access, or price predictions.')}<div class="container"><div class="lab-grid"><div class="lab-card"><div class="eyebrow">FIBONACCI MODEL</div><h2>Retracement calculator</h2><p>Enter your own illustrative swing endpoints. A bullish retracement is measured down from the high; a bearish retracement is measured up from the low.</p><div class="calc-row"><div class="field"><label for="swing-low">Swing low</label><input id="swing-low" type="number" min="-1000000000000" max="1000000000000" step="any" value="100"></div><div class="field"><label for="swing-high">Swing high</label><input id="swing-high" type="number" min="-1000000000000" max="1000000000000" step="any" value="200"></div></div><div class="field" style="margin-top:12px"><label for="direction">Retracement direction</label><select id="direction"><option value="bullish">Bullish impulse — pullback from high</option><option value="bearish">Bearish impulse — rebound from low</option></select></div><div id="fib-results" class="fib-results" aria-live="polite"></div><div class="notice" style="margin-top:16px">Fibonacci levels are mathematical references, not probabilities, executable targets, stop losses or evidence that a reversal has happened.</div></div><div class="lab-card"><div class="eyebrow">STRUCTURAL EDUCATION</div><h2>Impulse template</h2>${bigWave()}<div class="wave-rules" style="margin-top:17px"><div class="wave-rule"><strong>Wave 2</strong><small>Retraces wave 1 but cannot extend beyond its origin in a standard impulse.</small></div><div class="wave-rule"><strong>Wave 3</strong><small>Cannot be the shortest of waves 1, 3 and 5 in price length.</small></div><div class="wave-rule"><strong>Wave 4</strong><small>For a normal impulse, cannot overlap wave 1 territory.</small></div></div></div></div><section class="section"><div class="section-heading"><div><div class="eyebrow">MULTI-TIMEFRAME REVIEW</div><h2>Which timeframe serves which question?</h2></div></div><div class="method-block"><div class="info-card"><div class="number">D1 / H4</div><h3>Context and parent wave</h3><p>Use completed candles to identify the higher-degree structure and determine whether a lower-degree count fits.</p></div><div class="info-card"><div class="number">H1</div><h3>Sequence development</h3><p>Describe lower-degree swings while checking parent-wave constraints without assuming an exact candle completion time.</p></div><div class="info-card"><div class="number">M15</div><h3>Historical detail</h3><p>Inspect subdivisions, but do not reinterpret an incomplete parent candle as a completed higher-timeframe wave.</p></div></div></section></div>`;}
+function saved(){const items=filterArticles(articles,{sort:'newest',saved:state.saved});return `${header('YOUR LOCAL READING LIST','Saved research','Bookmarks stay in this browser only. No sign-in, sync or remote transmission.')}<div class="container"><div class="layout"><div>${items.length?`<div class="article-grid">${items.map(card).join('')}</div>`:`<div class="empty"><span>☆</span><h2>Nothing saved yet</h2><p>Choose a star on any article to add it to your personal offline reading list.</p><a href="#/news" class="btn outline">Browse reports ↗</a></div>`}</div>${side()}</div></div>`;}
+function sources(){return `${header('PROVENANCE & ETHICS','Source coverage and limitations','A transparent record of what this local reconstruction does and does not contain.')}<div class="container"><div class="method-block"><div class="info-card"><div class="number">✓</div><h3>Public article references</h3><p>Selected headlines, dates, report-level attributes and direct original links are indexed as historical evidence. Entries use independently written summaries.</p></div><div class="info-card"><div class="number">✕</div><h3>Not a full content mirror</h3><p>No publisher articles, images, scripts, live endpoints, brand identity or private content are copied. The original site remains the authority for full reports.</p></div><div class="info-card"><div class="number">↗</div><h3>Check the original</h3><p>Reference levels can be revised or superseded. Every indexed article links back to its source for date, context and updates.</p></div></div><section class="section"><div class="info-card"><h3>Reference URLs</h3><p><a href="https://elliottwavemonitor.com/en/latest-news-and-analysis/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">News & Analysis — original publisher ↗</a></p><p><a href="https://elliottwavemonitor.com/en/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">English homepage — original publisher ↗</a></p><p><a href="https://elliottwavemonitor.com/en/elliott-wave-theory/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Elliott Wave Theory — original publisher ↗</a></p><p>Index collected for offline research on November 12, 2026. The exact requested news URL was not directly fetchable by the inspection tool; therefore page-level visual fidelity and full route coverage remain unverified. Other public English and category pages were indexed. This local app does not crawl the source, request third-party content at runtime or claim live accuracy.</p><p><strong>Security:</strong> Source links use HTTPS, an explicit allowed host and <code>rel="noopener noreferrer"</code>; user search is escaped; bookmarks use localStorage. No execution of source-site JavaScript and no data harvesting.</p></div></section></div>`;}
+function notFound(){return `${header('NOT FOUND','This page is not in the local index','The research mirror includes a selective snapshot only.')}<div class="container"><a href="#/news" class="btn outline">Browse indexed research ↗</a></div>`;}
+function updateSavedBadge(){$('#saved-count').textContent=state.saved.size;}
+function calculate(){const box=$('#fib-results');if(!box)return;const lowInput=$('#swing-low'),highInput=$('#swing-high');const low=Number(lowInput.value),high=Number(highInput.value),direction=$('#direction').value;if(!lowInput.value.trim()||!highInput.value.trim()){box.innerHTML='<div class="notice">Enter both numeric endpoints.</div>';return;}try{const levels=retracementLevels(low,high,direction);box.innerHTML=levels.map(x=>`<div class="fib-result"><span>${(x.ratio*100).toFixed(1)}% retracement</span><strong>${Number(x.level.toFixed(8)).toLocaleString('en-US',{maximumFractionDigits:8})}</strong></div>`).join('');}catch(e){box.innerHTML=`<div class="notice">${esc(e.message)}</div>`;}}
+function render(){const route=parseRoute(location.hash);const active=route.page==='category'?'markets':route.page==='article'?'news':route.page;document.querySelectorAll('[data-nav]').forEach(x=>{x.classList.toggle('active',x.dataset.nav===active);if(x.dataset.nav===active)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');});main.innerHTML=({home,news:()=>listing('all'),category:()=>categories.some(c=>c.id===route.id && c.id!=='all')?listing(route.id,'category'):notFound(),article:()=>detail(route.id),education,lab,studio:studioHTML,saved,sources,'not-found':notFound})[route.page]();updateSavedBadge();calculate();applyLanguage();document.title=(route.page==='article'?articles.find(a=>a.id===route.id)?.title:route.page==='home'?'Overview':route.page.toUpperCase())+' · WaveScope';}
+window.addEventListener('hashchange',()=>{state.page=1;state.query='';render();window.scrollTo({top:0,behavior:'instant'});$('#mobile-nav').hidden=true;$('#menu-toggle').setAttribute('aria-expanded','false');});
+document.addEventListener('click',event=>{if(studioHandleClick(event))return;const button=event.target.closest('[data-bookmark]');if(button){const id=button.dataset.bookmark;if(!articles.some(a=>a.id===id))return;state.saved.has(id)?state.saved.delete(id):state.saved.add(id);try{localStorage.setItem(STORAGE,JSON.stringify([...state.saved]));}catch{}render();return;}
+const page=event.target.closest('[data-page]');if(page&&!page.disabled){const n=Number(page.dataset.page);if(Number.isInteger(n)&&n>=1&&n<=Math.ceil(articles.length/8)){state.page=n;render();$('#main').scrollIntoView({behavior:'instant'});}}});
+document.addEventListener('input',event=>{if(event.target.id==='searchbox'){const caret=event.target.selectionStart;state.query=event.target.value;state.page=1;render();const box=$('#searchbox');if(box){box.focus();try{box.setSelectionRange(caret,caret);}catch{}}}if(['swing-low','swing-high'].includes(event.target.id))calculate();});
+document.addEventListener('change',event=>{if(event.target.id==='language-select'){const lang=event.target.value==='ar'?'ar':'en';document.documentElement.lang=lang;try{localStorage.setItem(LANGUAGE,lang);}catch{}render();return;}if(studioHandleChange(event))return;if(event.target.id==='sortbox'){state.sort=event.target.value==='oldest'?'oldest':'newest';state.page=1;render();}if(event.target.id==='direction')calculate();});
+$('#menu-toggle').addEventListener('click',()=>{const nav=$('#mobile-nav');nav.hidden=!nav.hidden;$('#menu-toggle').setAttribute('aria-expanded',String(!nav.hidden));});
+$('#theme-toggle').addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem(THEME,next);}catch{}$('#theme-toggle').textContent=next==='dark'?'☀':'☾';});
+try{if(localStorage.getItem(THEME)==='dark'){document.documentElement.dataset.theme='dark';$('#theme-toggle').textContent='☀';}}catch{}
+if(!location.hash)history.replaceState(null,'','#/home');render();
+
+// Offline shell caching is same-origin only and is unavailable for file:// URLs.
+if(typeof navigator!=='undefined' && 'serviceWorker' in navigator && ['https:','http:'].includes(location.protocol) && (location.protocol==='https:' || ['localhost','127.0.0.1'].includes(location.hostname))){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+
+})();</script></head>
+<body>
+ <a class="skip" href="#main">Skip to main content</a>
+ <header class="topbar">
+  <div class="topbar-inner container">
+   <a class="brand" href="#/home" aria-label="WaveScope home"><span class="brand-glyph" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M4 28Q12 8 19 20T38 12" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M5 34Q15 20 21 30T39 25" fill="none" stroke="#5de3b3" stroke-width="3" stroke-linecap="round"/></svg></span><span>WAVE<span class="brand-accent">SCOPE</span><small>MARKET STRUCTURE RESEARCH</small></span></a>
+   <nav class="desktop-nav" aria-label="Primary navigation"><a href="#/home" data-nav="home" data-i18n="overview">Overview</a><a href="#/news" data-nav="news" data-i18n="news">News & Analysis</a><a href="#/category/gold" data-nav="markets" data-i18n="markets">Markets</a><a href="#/education" data-nav="education" data-i18n="education">Education</a><a href="#/lab" data-nav="lab" data-i18n="lab">Wave Lab</a><a href="#/studio" data-nav="studio" data-i18n="studio">Research Studio</a></nav>
+   <div class="top-actions"><label class="lang-label" for="language-select"><span class="sr-only">Language</span><select id="language-select" aria-label="Language"><option value="en">EN</option><option value="ar">عربي</option></select></label><button id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">☾</button><a class="saved-btn" href="#/saved" aria-label="Saved articles">☆ <span>Saved</span><b id="saved-count">0</b></a><button id="menu-toggle" class="icon-btn mobile-only" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#/home">Overview</a><a href="#/news">News & Analysis</a><a href="#/category/gold">Markets</a><a href="#/education">Education</a><a href="#/lab">Wave Lab</a><a href="#/studio">Research Studio</a><a href="#/saved">Saved</a></nav>
+ </header>
+ <div class="source-banner"><div class="container"><span class="live-dot"></span><strong>ARCHIVED RESEARCH</strong><span>Public-source snapshots through November 11, 2026 · No live prices or trading signals</span><a href="https://elliottwavemonitor.com/en/latest-news-and-analysis/" target="_blank" rel="noopener noreferrer">Original publisher ↗</a></div></div>
+ <main id="main" tabindex="-1"></main>
+ <footer class="footer"><div class="container footer-grid"><div><div class="footer-brand">WAVE<span>SCOPE</span></div><p>Independent offline front-end reconstruction for studying market analysis, forecasts, and Elliott Wave methodology. Not affiliated with or endorsed by the original publisher.</p></div><div><h3>Explore</h3><a href="#/news">All research</a><a href="#/category/gold">Gold reports</a><a href="#/category/forex">Forex reports</a><a href="#/education">Education</a></div><div><h3>Tools</h3><a href="#/lab">Wave Lab</a><a href="#/saved">Bookmarks</a><a href="#/studio">Research Studio</a><a href="#/sources">Provenance & scope</a><a href="https://elliottwavemonitor.com/en/" target="_blank" rel="noopener noreferrer">Original website ↗</a></div></div><div class="container legal"><span>© 2026 WaveScope Research · Local prototype</span><span>Educational only · Financial markets carry substantial risk · Not investment advice</span></div></footer>
+</body></html>
